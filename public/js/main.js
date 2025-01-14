@@ -236,8 +236,10 @@ maPoele.cuire();
 //Pour indiquer que le personnage est à la maison :
 
 //Utilisez la méthode seDeplacer avec l'objet maison en paramètre.
+
 // Indique que le personnage est à la maison
 personnage.seDeplacer(maison);
+
 // Affiche "Abdelali se déplace vers la maison."
 console.log(personnage.nom + " est actuellement à la " + personnage.lieu);
     
@@ -252,10 +254,49 @@ console.log(personnage.nom + " a pris un panier pour faire ses courses.");
 
 
 //Créez une boucle qui prend chaque élément (ingrédient) du contenu de l'épicerie (1 à 1) et en fait une COPIE dans le panier du personnage.
-
 for (let i = 0; i < epicerie.ingredients.length; i++) {
     let ingredient = epicerie.ingredients[i];
     panier.contenu.push(Object.assign({}, ingredient));
     console.log(`${ingredient.nom} a été ajouté au panier.`);
+}
+
+//Créez une méthode dans l'épicerie qui permet de payer les articles du panier du personnage et de vider son panier si le paiement est accepté.
+epicerie.payerPanier = function(personnage) {
+    let total = 0;
+    for (let i = 0; i < personnage.mainDroite.contenu.length; i++) {
+        total += personnage.mainDroite.contenu[i].prix;
+    }
+    if (personnage.argent >= total) {
+        personnage.argent -= total;
+        personnage.mainDroite.contenu = [];
+        console.log(`${personnage.nom} a payé ${total} pour ses achats.`);
+    } else {
+        console.log(`${personnage.nom} n'a pas assez d'argent pour payer.`);
+    }
+};
+
+//Retournez à la maison (pour pouvoir cuisiner) :
+personnage.seDeplacer(maison);
+console.log(personnage.nom + " est actuellement à la " + personnage.lieu);
+
+//Mettez chaque ingrédient dans le bol (1 à 1 avec une boucle) :
+for (let i = 0; i < panier.contenu.length; i++) {
+    let ingredient = panier.contenu[i];
+    bol.contenu.push(ingredient);
+    console.log(`${ingredient.nom} a été ajouté au bol.`);
+}
+
+//Retournez à l'épicerie pour rapporter le panier :
+personnage.seDeplacer(epicerie);
+console.log(personnage.nom + " est actuellement à l'" + personnage.lieu);
+
+//Retournez à la maison pour continuer l'omelette :
+personnage.seDeplacer(maison);
+console.log(personnage.nom + " est actuellement à la " + personnage.lieu);
+
+//Vérifiez chaque ingrédient dans le bol et le coupez seulement s'il est entier avec la méthode couper de la personne.
+couperIngredient = function(ingredient, outil) {
+    console.log(`${personnage.nom} coupe ${ingredient.nom} avec ${outil.nom}.`);
+    ingredient.etat = 'coupé';
 }
 
