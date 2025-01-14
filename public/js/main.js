@@ -186,7 +186,7 @@ maPoele.cuire();
 //Créez un objet  bol avec les attribut suivant:
 
 let bol = {
-    contenu: [], // Tableau d'ingrédients
+    contenu: [], 
 
     // Méthode pour mélanger les ingrédients
     melanger: function(nomDuMelange) {
@@ -199,7 +199,6 @@ let bol = {
     }
 };
 
-// Exemple d'utilisation
 bol.contenu = [
     { nom: 'farine', etat: 'sec', prix: 2 },
     { nom: 'sucre', etat: 'sec', prix: 1 }
@@ -207,9 +206,30 @@ bol.contenu = [
 
 console.log('Avant le mélange:', bol.contenu);
 
-// Appel de la méthode melanger
 bol.melanger('pâte à gâteau');
 
 console.log('Après le mélange:', bol.contenu);
 
+//Methode
+class Poele {
+    constructor() {
+        this.contenu = []; // Contenu initial de la poêle
+    }
+
+    cuire() {
+        setTimeout(() => {
+            if (this.contenu.length > 0) {
+                this.contenu[0].etat = 'cuit'; 
+            }
+            this.contenu = [newMelange]; 
+        }, 4000);
+    }
+}
+
+
+let maPoele = new Poele();
+maPoele.contenu.push({ etat: 'cru' }); 
+let newMelange = { etat: 'préparé' }; 
+
+maPoele.cuire(); 
 
