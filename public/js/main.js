@@ -55,11 +55,133 @@ let couteau = {
     nom: "couteau",
     action: "couper",
 };
-
 console.log(couteau);
 
 
 //Créez des produits (ingrédients) à mettre dans le magasin qui serviront à créer l'omelette (oignon, oeuf, epice, fromage, ...) avec les propriétés :
+
+//Liste des Ingrédients
+let oignon = {
+    nom: "oignon",
+    etats: ["entier", "coupé", "caramélisé"],
+    prix: 0.50,
+};
+console.log(oignon);
+
+let oeuf = {
+    Nom: "Œuf",
+    etats: ["entier", "battu", "cuit"],
+    Prix: 0.30,
+};
+console.log(oeuf);
+
+let epice = {
+    Nom: "Épice",
+    États: ['entier', 'moulu'],
+    Prix: 0.20,
+};
+console.log(epice);
+
+let Fromage = {
+    Nom: "Fromage",
+    États: ["entier", "râpé", "fondu"],
+    Prix: 1.00,
+};
+console.log(Fromage);
+
+let Poivron = {
+    Nom: "Poivron",
+    États: ["entier", "coupé", "grillé"],
+    Prix: 0.70,
+};
+console.log(Poivron);
+    
+let Tomate = {
+    Nom: "Tomate",
+    États: ["entière", "coupée", "concassée"],
+    Prix: 0.60,
+};
+console.log(Tomate);
+
+let Herbes = {
+    Nom: "Herbes",
+    États: ["fraîches", "séchées", "hachées"],
+    Prix: 0.40,
+};
+console.log(Herbes);
+
+let Lait = {
+    Nom: Lait,
+    États: ["liquide", "épaissi"],
+    Prix: 0.50,
+}
+console.log(Lait);
+
+let Bacon = {
+    Nom: "Bacon",
+    États: ["entier", "cuit", "coupé"],
+    Prix: 1.50,
+}
+console.log(Bacon);
+
+let Champignon = {
+    Nom: "Champignon",
+    États: ["entier", "coupé", "sauté"],
+    Prix: 0.80,
+}
+console.log(Champignon);
+
+//Créez un lieu "epicerie" avec les propriétés :
+
+let epicerie = {
+    nom: "Mon Épicerie",
+    personnes: [],
+    paniers: [
+        {
+            type: "panier",
+            contenu: []
+        }
+    ],
+    ingredients: [
+        // Liste des ingrédients créés précédemment
+    ]
+};
+console.log(epicerie);
+
+//créer un outile (poële).
+
+class Poele {
+    constructor(nom) {
+        this.nom = nom; 
+        this.contenu = []; 
+    }
+
+    // Méthode pour cuire les ingrédients
+    cuire() {
+        if (this.contenu.length === 0) {
+            console.log("La poêle est vide. Ajoutez des ingrédients à cuire.");
+        } else {
+            console.log(`Cuisson des ingrédients : ${this.contenu.join(", ")}`);
+            // Simuler la cuisson
+            this.contenu.forEach(ingredient => {
+                console.log(`${ingredient} est en train de cuire...`);
+            });
+            console.log("Cuisson terminée !");
+        }
+    }
+
+    // Méthode pour ajouter des ingrédients à la poêle
+    ajouterIngredient(ingredient) {
+        this.contenu.push(ingredient);
+        console.log(`${ingredient} a été ajouté à la poêle.`);
+    }
+}
+
+// Exemple d'utilisation
+const maPoele = new Poele("Poêle à frire");
+maPoele.ajouterIngredient("carottes");
+maPoele.ajouterIngredient("pommes de terre");
+maPoele.cuire();
 
 
 
