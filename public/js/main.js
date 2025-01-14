@@ -58,3 +58,8 @@ let couteau = {
 
 console.log(couteau);
 
+
+//Créez des produits (ingrédients) à mettre dans le magasin qui serviront à créer l'omelette (oignon, oeuf, epice, fromage, ...) avec les propriétés :
+
+
+
