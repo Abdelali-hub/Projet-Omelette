@@ -1,3 +1,4 @@
+//Créez un objet personnage avec les propriétés et méthodes suivantes :
 // Définition de l'objet personnage
 let personnage = {
     nom: "Nom du personnage", 
@@ -38,3 +39,13 @@ personnage.seDeplacer("la forêt");
 personnage.payerArticle({ nom: "pain", prix: 5 });
 personnage.mainDroite.push("couteau");
 personnage.couper("carotte", "couteau");
+
+//Créez un lieu "maison" avec les propriétés :
+
+let maison = {
+    nom: "maison",
+    personnes: [],
+};
+console.log(maison);
+
+
