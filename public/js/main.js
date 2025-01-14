@@ -178,10 +178,38 @@ class Poele {
 }
 
 // Exemple d'utilisation
-const maPoele = new Poele("Poêle à frire");
+let maPoele = new Poele("Poêle à frire");
 maPoele.ajouterIngredient("carottes");
 maPoele.ajouterIngredient("pommes de terre");
 maPoele.cuire();
 
+//Créez un objet  bol avec les attribut suivant:
+
+let bol = {
+    contenu: [], // Tableau d'ingrédients
+
+    // Méthode pour mélanger les ingrédients
+    melanger: function(nomDuMelange) {
+        // Remplacement du contenu par un nouvel ingrédient
+        this.contenu = [{
+            nom: nomDuMelange,
+            etat: 'pas cuit',
+            prix: 0
+        }];
+    }
+};
+
+// Exemple d'utilisation
+bol.contenu = [
+    { nom: 'farine', etat: 'sec', prix: 2 },
+    { nom: 'sucre', etat: 'sec', prix: 1 }
+];
+
+console.log('Avant le mélange:', bol.contenu);
+
+// Appel de la méthode melanger
+bol.melanger('pâte à gâteau');
+
+console.log('Après le mélange:', bol.contenu);
 
 
