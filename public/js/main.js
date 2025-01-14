@@ -49,3 +49,12 @@ let maison = {
 console.log(maison);
 
 
+//Créez un outil (couteau / mouleur) pour découper les ingrédients achetés avec les propriétés :
+
+let couteau = {
+    nom: "couteau",
+    action: "couper",
+};
+
+console.log(couteau);
+
