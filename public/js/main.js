@@ -249,3 +249,13 @@ personnage.seDeplacer(epicerie);
 let panier = epicerie.récupérerPanier(); 
 personnage.mainDroite = panier; 
 console.log(personnage.nom + " a pris un panier pour faire ses courses.");
+
+
+//Créez une boucle qui prend chaque élément (ingrédient) du contenu de l'épicerie (1 à 1) et en fait une COPIE dans le panier du personnage.
+
+for (let i = 0; i < epicerie.ingredients.length; i++) {
+    let ingredient = epicerie.ingredients[i];
+    panier.contenu.push(Object.assign({}, ingredient));
+    console.log(`${ingredient.nom} a été ajouté au panier.`);
+}
+
