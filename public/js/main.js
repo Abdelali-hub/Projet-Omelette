@@ -287,16 +287,57 @@ for (let i = 0; i < panier.contenu.length; i++) {
 }
 
 //Retournez à l'épicerie pour rapporter le panier :
+//Utilisez la méthode seDeplacer avec l'objet epicerie en paramètre.
 personnage.seDeplacer(epicerie);
+//Affichez un message.
 console.log(personnage.nom + " est actuellement à l'" + personnage.lieu);
 
 //Retournez à la maison pour continuer l'omelette :
+//Utilisez la méthode seDeplacer avec l'objet maison en paramètre.
 personnage.seDeplacer(maison);
 console.log(personnage.nom + " est actuellement à la " + personnage.lieu);
+
+//Affichez un message.
+console.log('Le personnage est de retour à la maison.');
 
 //Vérifiez chaque ingrédient dans le bol et le coupez seulement s'il est entier avec la méthode couper de la personne.
 couperIngredient = function(ingredient, outil) {
     console.log(`${personnage.nom} coupe ${ingredient.nom} avec ${outil.nom}.`);
     ingredient.etat = 'coupé';
 }
+
+//Vérifiez chaque ingrédient dans le bol et le coupez seulement s'il est entier avec la méthode couper de la personne.
+couperIngredient = function(ingredient, outil) {
+    console.log(`${personnage.nom} coupe ${ingredient.nom} avec ${outil.nom}.`);
+    ingredient.etat = 'coupé';
+}
+
+//Mélangez le contenu du bol avec la méthode melanger. Nommez ce mélange une 'omelette' (à passer en paramètre).
+bol.melanger('omelette');
+console.log('Le contenu du bol a été mélangé pour créer une omelette.');
+
+//Affichez un message avec le nouveau mélange.
+console.log('Le mélange final est une ' + bol.contenu[0].nom + '.');
+console.log('Le mélange final est ' + bol.contenu[0].etat + '.');
+console.log('Le mélange final coûte ' + bol.contenu[0].prix + ' euros.');
+
+//Videz le contenu du bol dans la poêle. Il ne doit plus rien avoir dans le bol et il doit y avoir juste l'omelette pas cuite.
+maPoele.contenu.push(bol.contenu[0]);
+bol.contenu = [];
+
+//affichez un message pour indiquer que le contenu du bol a été vidé dans la poêle.
+console.log('Le contenu du bol a été vidé dans la poêle.');
+
+//Cuisez l'omelette avec la méthode de la poêle.
+maPoele.cuire();
+
+//Affichez un message pour indiquer que l'omelette est en train de cuire.
+console.log('L\'omelette est en train de cuire.');
+
+//Affichez un message final pour indiquer que l'omelette est cuite.
+setTimeout(() => {
+    console.log('L\'omelette est cuite !');
+}, 4000);
+
+
 
