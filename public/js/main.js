@@ -1,8 +1,8 @@
 //Créez un objet personnage avec les propriétés et méthodes suivantes :
 // Définition de l'objet personnage
 let personnage = {
-    nom: "Nom du personnage", 
-    lieu: "Lieu actuel",      
+    nom: "Abdelali", 
+    lieu: "Bruxelles",      
     argent: 100,              
     mainDroite: [],          
     mainGauche: [],          
@@ -178,7 +178,7 @@ class Poele {
 }
 
 // Exemple d'utilisation
-let maPoele = new Poele("Poêle à frire");
+maPoele = new Poele("Poêle à frire");
 maPoele.ajouterIngredient("carottes");
 maPoele.ajouterIngredient("pommes de terre");
 maPoele.cuire();
@@ -233,3 +233,19 @@ let newMelange = { etat: 'préparé' };
 
 maPoele.cuire(); 
 
+//Pour indiquer que le personnage est à la maison :
+
+//Utilisez la méthode seDeplacer avec l'objet maison en paramètre.
+// Indique que le personnage est à la maison
+personnage.seDeplacer(maison);
+// Affiche "Abdelali se déplace vers la maison."
+console.log(personnage.nom + " est actuellement à la " + personnage.lieu);
+    
+   
+//Pour aller à l'épicerie acheter les ingrédients pour l'omelette :
+personnage.seDeplacer(epicerie);
+
+// Supposons que l'épicerie a une méthode pour récupérer un panier
+let panier = epicerie.récupérerPanier(); 
+personnage.mainDroite = panier; 
+console.log(personnage.nom + " a pris un panier pour faire ses courses.");
